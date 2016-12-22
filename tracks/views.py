@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-# Create your views here.
+from django.http import HttpResponse, Http404
+from .models import Track
+
+def track_view(request, title):
+	"""try:
+		track = Track.objects.get(title=title)
+	except
+		raise Http404
+	"""
+	track = get_object_or_404(Track, title=title)
+
+	return render(request, 'track.html', {'track': track})
