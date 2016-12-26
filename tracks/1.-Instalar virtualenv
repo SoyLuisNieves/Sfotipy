@@ -1,0 +1,14 @@
+1.-Instalar virtualenv
+pip install virtualenv
+
+2.-Instalar virtualenv dentro del proyecto y colocar las carpetas dentro de venv
+virtualenv venv
+
+3.-Activar virtualenv
+source venv/bin/activate
+
+4.-Crear proyecto django
+django-admin.py startproject sfotipy
+
+5.-Dar permisos de ejecucion a manage.py
+chmod +x manage.py
