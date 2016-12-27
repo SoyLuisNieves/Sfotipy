@@ -30,7 +30,18 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Listado por defecto de procesadores de contexto
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS =  TCP + (
+    'django.core.context_processors.request',
+)
+
+GRAPPELLI_ADMIN_TITLE = 'Sfotipy'
+
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,8 +116,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Configuracion para servir archivos desde media
+# Sin esto no funcionara el reporductor en el administrador
+MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
+MEDIA_URL = '/media/'
+
 
 # Backends
 #AUTHENTICATION_BACKENDS = (
 #    'userprofiles.backends.EmailBackend',
 #)
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+)
