@@ -64,7 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'sfotipy.middleware.CountryMiddleware',
+    # 'sfotipy.middleware.CountryMiddleware',
 )
 
 ROOT_URLCONF = 'sfotipy.urls'
