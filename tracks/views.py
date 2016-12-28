@@ -1,9 +1,10 @@
 import json
 from django.shortcuts import render, get_object_or_404
-
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404
 from .models import Track
 
+@login_required
 def track_view(request, title):
 	"""try:
 		track = Track.objects.get(title=title)
