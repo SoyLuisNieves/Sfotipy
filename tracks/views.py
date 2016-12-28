@@ -22,15 +22,15 @@ def track_view(request, title):
 			'biography': track.artist.biography,
 		}
 	}
-
+	# import ipdb; ipdb.set_trace()
 	# De JSON a cadena
-	json_data = json.dumps(data)
+	# json_data = json.dumps(data)
 
 	# De cadena a JSON
 	# json.loads(string_json)
 
 	# Hay que indicar al response que es un JSON, indicar tipo de peticion
 	# application/json para saber que envian o reciben un JSON
-	return HttpResponse(json_data, content_type='application/json')
+	# return HttpResponse(json_data, content_type='application/json')
 
-	# return render(request, 'track.html', {'track': track})
+	return render(request, 'track.html', {'track': track})

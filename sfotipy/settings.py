@@ -36,6 +36,7 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 TEMPLATE_CONTEXT_PROCESSORS =  TCP + (
     'django.core.context_processors.request',
+    'sfotipy.context_processors.basico',
 )
 
 GRAPPELLI_ADMIN_TITLE = 'Sfotipy'
@@ -63,6 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'sfotipy.middleware.CountryMiddleware',
 )
 
 ROOT_URLCONF = 'sfotipy.urls'
@@ -78,6 +80,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Los procesadores de contexto van aqui y no arriba con TCP
+                'sfotipy.context_processors.basico',
             ],
         },
     },

@@ -10,6 +10,9 @@ class Track(models.Model):
 	album = models.ForeignKey(Album)
 	artist = models.ForeignKey(Artist)
 
+	def get_absolute_url(self):
+		return '/tracks/' + self.title
+
 	def player(self):
 		return """
 			<video controls src="%s">
@@ -21,3 +24,5 @@ class Track(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
+# Minuto 30
