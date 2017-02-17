@@ -1,0 +1,12 @@
+mockups
+django-extensions
+
+Artist.objects.filter(id__gt=2).delete()
+
+PARIDAD DE ARISTAS
+EL MISMO PARA EL 4X4
+
+ARISTAS ENCONTRADAS
+PONER LAS ARISTAS EN LA S UPERIOR
+(Ll)' 2U (Ll)' 2U 2F (Ll)'
+2F (Rr) 2U (Rr)' 2U 2(Ll) 
